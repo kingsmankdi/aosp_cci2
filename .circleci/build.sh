@@ -33,4 +33,4 @@ echo "Done"
 
 bash build/envsetup.sh
 echo " BUILD/ENVSETUP.SH CALLED"
-lunch aosp_ysl-userdebug & mka bacon -j8
+lunch aosp_ysl-userdebug & mka bacon -j$(nproc --all)

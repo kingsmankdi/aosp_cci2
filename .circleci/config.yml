@@ -11,7 +11,7 @@ jobs:
            git config --global color.ui false
            git clone https://github.com/dustxyz/circleci-aosp
            cd circleci-aosp
-           bash build.sh
+           bash .circleci/build.sh
 workflows:
   version: 2.1
   cooking:
