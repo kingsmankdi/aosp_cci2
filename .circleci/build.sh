@@ -2,6 +2,9 @@
 
 apt install sudo
 
+echo -e "number of cores?"
+nproc --all
+
 mkdir hycon 
 cd hycon
 echo -e "Installing Google Repo"
@@ -44,6 +47,7 @@ git clone --depth=1 https://github.com/Hycon-Devices/kernel_xiaomi_ysl kernel/xi
 
 echo "Done"
 
+echo -e "Building"
 bash build/envsetup.sh
 echo " BUILD/ENVSETUP.SH CALLED"
 lunch aosp_ysl-userdebug & mka bacon -j$(nproc --all)
