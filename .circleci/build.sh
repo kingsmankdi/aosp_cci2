@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-echo "Installing Google Repo"
-mkdir -p .bin
-PATH="${HOME}/.bin:${PATH}"
-curl https://storage.googleapis.com/git-repo-downloads/repo > .bin/repo
-chmod a+rx .bin/repo
+mkdir hycon 
+cd hycon
+echo -e "Installing Google Repo"
+sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
+sudo chmod a+rx /usr/local/bin/repo
 
 echo "Repo sync"
 repo init -u https://github.com/HyconOS/manifest -b eleven
@@ -17,6 +17,6 @@ git clone --depth=1 https://github.com/Hycon-Devices/kernel_xiaomi_ysl kernel/xi
 
 echo "Done"
 
-. build/envsetup.sh
-lunch aosp_ysl-userdebug
-mka bacon -j8
+bash build/envsetup.sh
+echo " BUILD/ENVSETUP.SH CALLED"
+lunch aosp_ysl-userdebug & mka bacon -j8

@@ -8,7 +8,9 @@ jobs:
           command: |
            git config --global user.name "dustxyz"
            git config --global user.email "dustxyz@criptext.com"
-           git config --global color.ui false 
+           git config --global color.ui false
+           git clone https://github.com/dustxyz/circleci-aosp
+           cd circleci-aosp
            bash build.sh
 workflows:
   version: 2.1
