@@ -1,0 +1,20 @@
+version: 2.1
+jobs:
+  compile:
+   docker:
+      - image: z4nyx/docker:latest
+   steps:
+      - run:
+          command: |
+           git config --global user.name "dustxyz"
+           git config --global user.email "dustxyz@criptext.com"
+           git config --global color.ui false
+           repo init -u https://github.com/HyconOS/manifest -b eleven
+           repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags.
+           bash build.sh
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+      - compile
+
