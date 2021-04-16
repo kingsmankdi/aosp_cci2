@@ -3,6 +3,9 @@
 mkdir hycon
 cd hycon
 
+echo "Installing sudo"
+apt-get install sudo
+
 echo "Installing repo"
 sudo apt-get install repo
 
