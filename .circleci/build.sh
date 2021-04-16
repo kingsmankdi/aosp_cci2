@@ -20,6 +20,12 @@ apt install \
     texinfo unzip w3m xsltproc zip zlib1g-dev lzip \
     libxml-simple-perl apt-utils gh \
 
+git clone https://github.com/dustxyz/scripts
+cd scripts
+chmod +x setup/android_build_env.sh
+.setup/android_build_env.sh
+cd ..
+
 echo "Repo sync"
 repo init -u https://github.com/HyconOS/manifest -b eleven
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
