@@ -8,7 +8,7 @@ echo -e "Installing Google Repo"
 sudo apt-get install repo 
 
 echo -e "Installing tools"
-apt install \
+sudo apt install \
     adb autoconf automake axel bc bison build-essential \
     ccache clang cmake expat fastboot flex g++ \
     g++-multilib gawk gcc gcc-multilib git gnupg gperf \
@@ -23,7 +23,7 @@ apt install \
 git clone https://github.com/dustxyz/scripts
 cd scripts
 chmod +x setup/android_build_env.sh
-.setup/android_build_env.sh
+bash setup/android_build_env.sh
 cd ..
 
 echo "Repo sync"
