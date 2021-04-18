@@ -18,7 +18,7 @@ echo -e "Installing tools"
 sudo apt install -y \
     adb autoconf automake axel bc bison build-essential \
     ccache clang cmake expat fastboot flex g++ \
-    g++-multilib gawk gcc gcc-multilib git gnupg gperf \
+    g++-multilib gawk gcc gcc-multilib gnupg gperf \
     htop imagemagick lib32ncurses5-dev lib32z1-dev libtinfo5 libc6-dev libcap-dev \
     libexpat1-dev libgmp-dev '^liblz4-.*' '^liblzma.*' libmpc-dev libmpfr-dev libncurses5-dev \
     libsdl1.2-dev libssl-dev libtool libxml2 libxml2-utils '^lzma.*' lzop \
