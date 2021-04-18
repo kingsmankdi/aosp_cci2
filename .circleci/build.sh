@@ -12,7 +12,7 @@ mkdir -p ~/.bin
 PATH="${HOME}/.bin:${PATH}"
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
 chmod a+rx ~/.bin/repo
-apt install curl
+
 
 echo -e "Installing tools"
 sudo apt install \
@@ -36,12 +36,13 @@ cd scripts
 bash setup/android_build_env.sh
 cd ..
 
+
+echo "----------------Repo Sync----------------"
+repo init -u https://github.com/HyconOS/manifest.git -b eleven
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+
 echo " -----------Cloning Hals--------------"
 rm -rf vendor/codeaurora/telephony hardware/qcom-caf/msm8996/media hardware/qcom-caf/msm8996/audio hardware/qcom-caf/msm8996/display && git clone https://github.com/wave-project/vendor_codeaurora_telephony --depth=1 --single-branch vendor/codeaurora/telephony/ && git clone --single-branch https://github.com/Jabiyeff/android_hardware_qcom_media hardware/qcom-caf/msm8996/media && git clone --single-branch https://github.com/Jabiyeff/android_hardware_qcom_display hardware/qcom-caf/msm8996/display &&  git clone https://github.com/LineageOS/android_hardware_qcom_audio --single-branch -b lineage-18.1-caf-msm8996 hardware/qcom-caf/msm8996/audio
-
-echo "Repo sync"
-repo init -u https://github.com/HyconOS/manifest -b eleven
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 echo "Cloning dependencies"
 git clone --depth=1 https://github.com/Hycon-Devices/device_xiaomi_ysl device/xiaomi/ysl
