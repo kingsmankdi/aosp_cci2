@@ -9,7 +9,7 @@ jobs:
            git config --global user.name "dustxyz"
            git config --global user.email "dustxyz@criptext.com"
            git config --global color.ui false
-           git clone https://github.com/dustxyz/circleci-aosp
+           git clone https://github.com/flaahokiller/circleci-aosp
            cd circleci-aosp
            bash .circleci/build.sh
 workflows:
