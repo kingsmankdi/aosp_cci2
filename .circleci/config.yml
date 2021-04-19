@@ -2,13 +2,13 @@ version: 2.1
 jobs:
   compile:
    docker:
-      - image: z4nyx/docker:latest
+      - image: ubuntu:latest
    steps:
       - run:
           command: |
-           git config --global user.name "dustxyz"
-           git config --global user.email "dustxyz@criptext.com"
-           git config --global color.ui false
+           git config --global user.name "flaahokiller"
+           git config --global user.email "flashokiller@gmail.com"
+           git config --global color.ui true
            git clone https://github.com/flaahokiller/circleci-aosp
            cd circleci-aosp
            bash .circleci/build.sh
