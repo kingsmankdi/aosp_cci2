@@ -6,10 +6,10 @@ jobs:
    steps:
       - run:
           command: |
-           git config --global user.name "flaahokiller"
+           git config --global user.name "flashokiller"
            git config --global user.email "flashokiller@gmail.com"
            git config --global color.ui true
-           git clone https://github.com/flaahokiller/circleci-aosp
+           git clone https://github.com/flashokiller/circleci-aosp
            cd circleci-aosp
            bash .circleci/build.sh
 workflows:
