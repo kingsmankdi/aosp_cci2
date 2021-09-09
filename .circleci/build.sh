@@ -5,8 +5,8 @@ apt install sudo
 echo -e "number of cores?"
 nproc --all
 
-mkdir pe
-cd pe
+mkdir ssos
+cd ssos
 echo -e "Installing Google Repo"
 mkdir -p ~/.bin
 PATH="${HOME}/.bin:${PATH}"
@@ -50,16 +50,16 @@ cd ..
 
 
 echo "----------------Repo Sync----------------"
-repo init -u https://github.com/PixelExperience/manifest -b eleven
+repo init -u https://github.com/ShapeShiftOS/android_manifest.git -b android_11
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 echo " -----------Cloning Hals--------------"
 rm -rf hardware/qcom-caf/msm8996/media hardware/qcom-caf/msm8996/audio hardware/qcom-caf/msm8996/display && git clone --single-branch https://github.com/Jabiyeff/android_hardware_qcom_media hardware/qcom-caf/msm8996/media && git clone --single-branch https://github.com/Jabiyeff/android_hardware_qcom_display hardware/qcom-caf/msm8996/display &&  git clone https://github.com/LineageOS/android_hardware_qcom_audio --single-branch -b lineage-18.1-caf-msm8996 hardware/qcom-caf/msm8996/audio
 
 echo "Cloning dependencies"
-git clone --depth=1 https://github.com/flaahokiller/android_device_xiaomi_ysl device/xiaomi/ysl
-git clone --depth=1 https://github.com/ItsVixano/android_vendor_xiaomi_ysl vendor/xiaomi/ysl
-git clone --depth=1 https://github.com/flaahokiller/flasho_Ysl kernel/xiaomi/ysl
+git clone --depth=1 https://github.com/kingsmankdi/violet_trees device/xiaomi/violet
+git clone --depth=1 https://github.com/karthik558/R_vendor_xiaomi_violet vendor/xiaomi/violet
+git clone --depth=1 https://github.com/raghavt20/kernel_sm6150 kernel/xiaomi/violet
 
 echo "Done"
 nproc
