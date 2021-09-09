@@ -12,6 +12,7 @@ jobs:
            git config --global user.name "kingsmankdi"
            git config --global user.email "gupta2502chirag@gmail.com"
            git config --global color.ui true
+           export DEBIAN_FRONTEND=noninteractive
            git clone https://github.com/flashokiller/circleci-aosp
            cd circleci-aosp
            bash .circleci/build.sh
