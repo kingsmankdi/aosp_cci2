@@ -6,8 +6,11 @@ jobs:
    steps:
       - run:
           command: |
-           git config --global user.name "flashokiller"
-           git config --global user.email "flashokiller@gmail.com"
+           apt-get update && \
+           apt-get upgrade -y && \
+           apt-get install -y git
+           git config --global user.name "kingsmankdi"
+           git config --global user.email "gupta2502chirag@gmail.com"
            git config --global color.ui true
            git clone https://github.com/flashokiller/circleci-aosp
            cd circleci-aosp
