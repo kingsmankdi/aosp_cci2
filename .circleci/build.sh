@@ -43,7 +43,7 @@ ccache -o compression=true
 
 
 echo "-------------- Installing scripts----------------"
-git clone https://github.com/flaahokiller/scripts-1
+git clone https://github.com/kingsmankdi/scripts-1 scripts-1
 cd scripts-1
 bash setup/android_build_env.sh
 cd ..
